@@ -12,7 +12,7 @@ BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 icon = pygame.image.load("icone.png")
 pygame.display.set_icon(icon)
-pygame.mixer.music.load("music.mp3")
+pygame.mixer.music.load("musicsw.mp3")
 pygame.mixer.music.play(-1)
 points = []
 selected_point = None
