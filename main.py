@@ -5,7 +5,7 @@ from tkinter import messagebox
 pygame.init()
 win = pygame.display.set_mode((800, 600))
 pygame.display.set_caption("Space Marker")
-background_image = pygame.image.load("bg.jpg")
+background_image = pygame.image.load("space.jpg")
 background_image = pygame.transform.scale(background_image, (800, 600))
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
