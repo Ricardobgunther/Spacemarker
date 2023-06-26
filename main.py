@@ -37,14 +37,14 @@ def show_dialog():
             return values['-NAME-']
 def draw_points():
     for point, name in points:
-        pygame.draw.circle(win, RED, point, 5)
+        pygame.draw.circle(win, WHITE, point, 5)
         text_surface = text_font.render(name, True, BLACK)
         win.blit(text_surface, (point[0] + 10, point[1] - 10))
 def draw_lines():
     for i in range(len(points) - 1):
         start_point, start_name = points[i]
         end_point, end_name = points[i + 1]
-        pygame.draw.line(win, RED, start_point, end_point, 2)
+        pygame.draw.line(win, WHITE, start_point, end_point, 2)
         distance_x = abs(end_point[0] - start_point[0])
         distance_y = abs(end_point[1] - start_point[1])
         line_text = f"Distância: X={distance_x}, Y={distance_y}"
