@@ -1,6 +1,7 @@
 import pygame
 import PySimpleGUI as sg
 from tkinter import messagebox
+from PIL import Image
 
 pygame.init()
 win = pygame.display.set_mode((800, 600))
@@ -10,10 +11,6 @@ background_image = pygame.transform.scale(background_image, (800, 600))
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 RED = (255, 0, 0)
-icon = pygame.image.load("icone.png")
-pygame.display.set_icon(icon)
-pygame.mixer.music.load("musicsw.mp3")
-pygame.mixer.music.play(-1)
 points = []
 selected_point = None
 text_font = pygame.font.Font(None, 20)
@@ -71,10 +68,13 @@ def load_points():
 def delete_points():
     global points
     points = []
-
 run = True
 clock = pygame.time.Clock()
-
+icon = Image.open("icone.ico")
+icon_surface = pygame.image.fromstring(icon.tobytes(), icon.size, icon.mode).convert_alpha()
+pygame.display.set_icon(icon_surface)
+pygame.mixer.music.load("musicsw.mp3")
+pygame.mixer.music.play(-1)
 while run:
     clock.tick(60)  
     for event in pygame.event.get():
