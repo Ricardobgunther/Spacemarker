@@ -2,7 +2,6 @@ import pygame
 import PySimpleGUI as sg
 from tkinter import messagebox
 from PIL import Image
-
 pygame.init()
 win = pygame.display.set_mode((800, 600))
 pygame.display.set_caption("Space Marker")
@@ -35,7 +34,7 @@ def show_dialog():
 def draw_points():
     for point, name in points:
         pygame.draw.circle(win, WHITE, point, 5)
-        text_surface = text_font.render(name, True, BLACK)
+        text_surface = text_font.render(name, True, RED)
         win.blit(text_surface, (point[0] + 10, point[1] - 10))
 def draw_lines():
     for i in range(len(points) - 1):
@@ -45,7 +44,7 @@ def draw_lines():
         distance_x = abs(end_point[0] - start_point[0])
         distance_y = abs(end_point[1] - start_point[1])
         line_text = f"Distância: X={distance_x}, Y={distance_y}"
-        text_surface = text_font.render(line_text, True, BLACK)
+        text_surface = text_font.render(line_text, True, RED)
         mid_point = ((start_point[0] + end_point[0]) // 2, (start_point[1] + end_point[1]) // 2)
         win.blit(text_surface, (mid_point[0] + 10, mid_point[1] + 10))
 def save_points():
